@@ -176,12 +176,12 @@ body.menu-open .nav__toggle span:nth-child(3) { transform: translateY(-6px) rota
 .cred { border-block: 1px solid var(--navy-line); background: var(--navy-2); }
 .cred__inner { padding-block: 34px; }
 .cred__label { font-family: var(--font-tech); font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--fg-3); margin-bottom: 22px; text-align: center; }
-.cred__logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(20px, 4vw, 52px); }
-.cred__logo { font-family: var(--font-tech); font-weight: 500; font-size: clamp(0.95rem, 1.5vw, 1.15rem); letter-spacing: 0.05em; color: var(--fg-2); opacity: 0.85; transition: color 0.25s var(--ease), opacity 0.25s var(--ease); white-space: nowrap; }
+.cred__logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(24px, 4.5vw, 60px); }
+.cred__logo { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.05rem, 1.9vw, 1.4rem); letter-spacing: 0.01em; color: var(--fg-1); opacity: 0.88; transition: color 0.25s var(--ease), opacity 0.25s var(--ease); white-space: nowrap; }
 .cred__logo:hover { color: var(--fg-0); opacity: 1; }
 
 /* ---------- Pull / insight ---------- */
-.insight { text-align: center; }
+.insight { text-align: left; }
 .insight__quote { font-family: var(--font-display); font-weight: 500; font-size: clamp(2rem, 5.2vw, 4.1rem); line-height: 1.08; letter-spacing: -0.015em; color: var(--fg-0); max-width: 18ch; margin: 0 auto; text-wrap: balance; }
 .insight__quote .ln2 { color: var(--coral); font-style: italic; }
 .insight__by { margin-top: 30px; font-family: var(--font-tech); font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--fg-3); }
@@ -409,3 +409,125 @@ html.js .reveal.is-in { transform: none; }
 .section-index { font-family: var(--font-tech); font-size: 12px; letter-spacing: 0.2em; color: var(--fg-3); }
 .stack-lg > * + * { margin-top: 24px; }
 .mt-eyebrow { margin-top: 20px; }
+
+/* ---------- Hero photo (replaces orbital graphic) ---------- */
+.hero__eyebrow { margin-bottom: 16px; }
+.hero__tagline {
+  font-family: var(--font-tech);
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  letter-spacing: 0.06em;
+  color: var(--fg-3);
+  margin-bottom: 20px;
+}
+.hero__photo {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin-inline: auto;
+}
+.hero__photo-img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  aspect-ratio: 4/5;
+  filter: grayscale(10%);
+  box-shadow: 0 32px 80px -20px rgba(0,0,0,0.5);
+}
+@media (max-width: 940px) {
+  .hero__photo { max-width: 320px; grid-row: 1; }
+}
+
+/* ---------- Insight section with graphic ---------- */
+.insight__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+.insight__graphic {
+  width: clamp(180px, 20vw, 320px);
+  aspect-ratio: 1;
+  flex: none;
+  opacity: 0.65;
+  align-self: center;
+}
+.insight__graphic svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  color: var(--teal);
+}
+@media (max-width: 720px) {
+  .insight__inner { grid-template-columns: 1fr; }
+  .insight__graphic { display: none; }
+}
+
+/* ---------- Hero photo mobile fix ---------- */
+@media (max-width: 940px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .hero__content { grid-row: 1; }
+  .hero__photo {
+    grid-row: 2;
+    max-width: 100%;
+    margin-top: 32px;
+  }
+  .hero__photo-img {
+    aspect-ratio: 16/9;
+    object-position: center 20%;
+  }
+}
+
+/* ---------- Hero thesis line — larger, more dramatic ---------- */
+.hero__role {
+  font-family: var(--font-display) !important;
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem) !important;
+  font-weight: 500 !important;
+  color: var(--fg-0) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 28px !important;
+}
+
+/* ---------- Trust photo — headshot crop ---------- */
+.trust__img {
+  aspect-ratio: 3/4 !important;
+  object-position: center top !important;
+}
+
+/* ---------- Core Insight — question framing ---------- */
+.insight__quote--question {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 4.6vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--fg-0);
+  max-width: 14ch;
+  margin: 0 0 28px 0;
+  text-align: left;
+  text-wrap: balance;
+}
+.insight__lede {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  line-height: 1.4;
+  color: var(--coral);
+  font-style: italic;
+  margin-bottom: 24px;
+  max-width: 36ch;
+}
+.insight__body {
+  color: var(--fg-1);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 56ch;
+  margin-bottom: 16px;
+}
+@media (max-width: 720px) {
+  .insight { text-align: left; }
+}
