@@ -311,3 +311,18 @@ html.review .c-story__grid [data-missing]{display:block;background:rgba(255,103,
 .c-case__media{position:relative}
 .c-case__fallback::after{content:"Illustration, not project imagery";position:absolute;right:12px;bottom:10px;font:500 10px var(--f-label);letter-spacing:.1em;text-transform:uppercase;color:var(--txt-dim);background:rgba(8,11,18,.6);padding:3px 7px}
 .c-case--hero .c-case__fallback::after{top:12px;bottom:auto}
+/* Held content: visible only in ?review, never public */
+[data-held]{display:none}
+html.review [data-held]{display:block;outline:2px dashed var(--energy);outline-offset:6px}
+html.review .c-cases--pair[data-held]{display:grid}
+.c-areas{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:var(--s5);border-top:1px solid var(--bone-line)}
+.c-areas li{padding:22px 24px 4px 0}.c-areas li+li{padding-left:24px;border-left:1px solid var(--bone-line)}
+.c-areas b{display:block;font-family:var(--f-sub,var(--f-display));font-size:20px;letter-spacing:-.02em;line-height:1.1;margin-bottom:8px}
+.c-areas span{color:var(--txt-mid);font-size:15.5px;line-height:1.45}
+.c-quote{margin-top:var(--s5);max-width:36em}.c-quote blockquote{font-family:var(--f-display);font-weight:var(--f-display-w);letter-spacing:-.02em;font-size:clamp(22px,2.4vw,32px);line-height:1.15}
+.c-quote figcaption{margin-top:12px;color:var(--txt-mid);font-size:15px}.c-quote__flag{display:block;color:#B83A22;font:600 11px var(--f-label);letter-spacing:.1em;text-transform:uppercase;margin-top:6px}
+.c-reads{list-style:none;margin-top:24px;border-top:1px solid var(--bone-line)}.c-reads li{padding:16px 0;border-bottom:1px solid var(--bone-line)}
+.c-reads b{display:block;font-family:var(--f-sub,var(--f-display));font-size:22px;letter-spacing:-.02em}.c-reads span{color:var(--txt-mid);font-size:14.5px}
+.c-held-label{margin-top:32px;color:#B83A22;font:600 11px var(--f-label);letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:1023px){.c-areas{grid-template-columns:repeat(2,minmax(0,1fr))}.c-areas li:nth-child(odd){padding-left:0;border-left:0}.c-areas li:nth-child(n+3){border-top:1px solid var(--bone-line);margin-top:18px;padding-top:22px}}
+@media(max-width:767px){.c-areas{grid-template-columns:1fr}.c-areas li,.c-areas li+li,.c-areas li:nth-child(n+3){padding:18px 0;margin:0;border-left:0;border-top:1px solid var(--bone-line)}.c-areas li:first-child{border-top:0}}

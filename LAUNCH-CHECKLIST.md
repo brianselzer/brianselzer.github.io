@@ -32,3 +32,11 @@ Status key: Done, Open (Brian), Open (Claude).
 - Hero Network labeled "Concept only" on the Lab. Confirm the current status
 - Removed from Signals pending verification: press logos (Forbes, Wired, WSJ and others) and four essay titles with reading times
 - Removed from the PQ page: "Marvel and Microsoft" line
+
+## Content preservation (added after the audit)
+- Done: legacy site frozen. Git tag `legacy-main-2026-11-14` on `main` (abe0bfe), immutable copy in `_archive/legacy-2026-11-14/` (HTML, CSS, JS, extracted text), same content in the Drive Canon folder.
+- Done: migration matrix with 12 flagged conflicts (CONTENT-MIGRATION-MATRIX.md).
+- Open (Brian): decide the conflicts C1 to C12.
+- Open (Brian): approve or drop the Foxhoven testimonial and the press strip.
+- Open (Brian): two or three real Signals posts with links.
+- Review mode (`?review`) now also shows held content: Halo case, testimonial, Signals candidates.
