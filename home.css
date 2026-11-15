@@ -39,6 +39,7 @@ a{color:inherit;text-decoration:none}
 .c-hero__ctas{display:flex;gap:12px;flex-wrap:wrap}
 .c-hero__fig{position:relative;justify-self:end;width:min(100%,430px)}
 .c-hero__fig img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;box-shadow:0 0 0 1px rgba(242,240,233,.22)}
+.c-hero__fig picture,.c-about picture{display:block}
 .c-hero__cap{margin-top:12px;color:var(--txt-dim)}
 .c-planes{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.95}
 .c-planes svg{position:absolute;right:-6%;top:6%;width:62%;height:auto;overflow:visible}
@@ -70,7 +71,7 @@ a{color:inherit;text-decoration:none}
 .c-lab__item p{color:var(--txt-dim);font-size:15.5px}
 /* about */
 .c-about{display:grid;grid-template-columns:5fr 7fr;gap:var(--s5);align-items:center}
-.c-about img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 25%}
+.c-about img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%}
 .c-about h2{font-family:var(--f-display);font-weight:var(--f-display-w);letter-spacing:var(--f-display-ls);font-size:clamp(34px,4.6vw,64px);line-height:.98;margin-bottom:20px}
 .c-about p{color:var(--txt-mid);font-size:18px;max-width:34em;margin-bottom:14px}
 /* invite */
@@ -89,9 +90,9 @@ footer a{color:var(--txt-light);border-bottom:1px solid #3A4A58;margin-right:10p
 @media (max-width:1023px){
   .c-hero--portrait{align-items:flex-start;padding-top:96px;min-height:0}
   .c-hero__grid{grid-template-columns:1fr;gap:28px}
-  .c-hero__fig{justify-self:start;width:min(78%,360px);margin-left:auto}.c-hero__fig img{aspect-ratio:1/1;object-position:50% 18%}
+  .c-hero__fig{justify-self:start;width:min(78%,360px);margin-left:auto}.c-hero__fig img{aspect-ratio:4/5;object-position:50% 20%}
   .c-planes svg{width:92%;top:4%;right:-20%}
-  .c-about{grid-template-columns:1fr;gap:28px} .c-cta__in{grid-template-columns:1fr}
+  .c-about{grid-template-columns:1fr;gap:28px} .c-about picture{max-width:460px} .c-cta__in{grid-template-columns:1fr}
   .nav__toggle{display:block;margin-left:10px}.nav__links{margin:0}
   .nav__links{display:none;position:absolute;top:70px;left:var(--gut);right:var(--gut);flex-direction:column;align-items:stretch;gap:0;background:var(--ink-2);border:1px solid var(--ink-line);padding:8px 18px}
   .nav__links.is-open{display:flex}
