@@ -1,4 +1,4 @@
-/* Design tokens + font faces. Provisional until Brian approves type/color. Spec: DESIGN-SYSTEM.md */
+/* Design tokens + font faces. Provisional until Brian approves type/color. Spec: Notion WEB-001 page, "Repo archive: Design System v0.5" */
 @font-face{font-family:"Inter Tight";font-weight:400;font-display:swap;src:url(fonts/inter-tight-latin-400-normal.woff2) format("woff2")}
 @font-face{font-family:"Inter Tight";font-weight:500;font-display:swap;src:url(fonts/inter-tight-latin-500-normal.woff2) format("woff2")}
 @font-face{font-family:"Inter Tight";font-weight:600;font-display:swap;src:url(fonts/inter-tight-latin-600-normal.woff2) format("woff2")}
