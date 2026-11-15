@@ -1,4 +1,4 @@
-# BrianSelzer.com Design System v0.4 (WEB-001) | Status: PROPOSED, local branch only
+# BrianSelzer.com Design System v0.5 (WEB-001) | Status: PROPOSED, local branch only
 Approved by Marshall (pending Brian): type system A provisional, 1280px container, 12/8/4 grid, local refactor. Not deployed, not merged to main.
 Files: `tokens.css` (fonts, color, type, spacing, type systems A/B/C) and `home.css` (base + components). Review mode: add `?review` to any URL to reveal asset-requirement notes (never visible by default).
 
@@ -56,3 +56,20 @@ Done: tokens extracted, V3 card and unused rules removed, components renamed, pa
 Verified: no horizontal overflow on Home, Advisory, Work and the component preview at 320, 360, 390, 480, 600, 720 (200% zoom of 1440), 768, 820, 900, 1000, 1023, 1024, 1100, 1200, 1440, 1920. Keyboard: every focusable element on Home, Advisory and Work has a visible focus ring at 1440 and 390; Enter opens the case disclosure and the mobile menu (aria-expanded updates). Reduced motion: hero parallax does not run. Home and Advisory were pixel-identical across the refactor before the intentional 1280 container change.
 Open: Lighthouse, real-image crop checks (no approved images yet), 400% zoom text wrapping review by eye, contact delivery, live HTTPS, review-mode note overlaps overlay text on the smallest phones (review-only).
 Legacy claims: work.html was replaced with the new Work page. No page now says Apple acquired Ogmento, "sustainable" or "25+ AAA". The old Halo case is not published until verified. The legacy styles.css remains for contact, assessment, playablesystems and insights until they migrate.
+
+
+## 12. V1 page set (v0.5)
+All eight pages use the same shell, tokens and six components. No page loads the old stylesheet (styles.css and app.js removed).
+
+| Page | Identity | Main components |
+|---|---|---|
+| index.html | Personal hero, work, engagement lanes, point of view, Lab teaser, About, two-path close | C1 portrait hero, C2 wide/tall/banner, C4 lanes + lab, C6 |
+| work.html | One dominant case, two compact cases, qualification section | C2 hero + compact, C3 split, C6 |
+| advisory.html | Commercial landing: when to call, three ways in, how companies hire me | C1 type hero, C3, C5, C6 |
+| playablesystems.html | Method: layered diagram (interactive highlight), eight conditions, why it matters, where it applies | C1 type hero, diagram figure (`c-dia`), `c-eight`, C3, C6 |
+| insights.html (Signals) | Editorial publication shell: themes, speaking topics, Substack subscribe | C1 type hero, `c-proof`, C3, C6 |
+| lab.html | Maturity-labelled prototypes with legend (`c-legend`) | C1 type hero, `c-lab--page`, C6 |
+| contact.html | Three prefilled mailto paths, call booking, LinkedIn, quiet PQ link | `pghead`, C3 rows |
+| assessment.html | Short PQ landing that sends to pq.brianselzer.com | C1 type hero, `c-proof`, C6 |
+
+Rules added: placeholder media carries the public label "Illustration, not project imagery". Unsupported press logos and essay lists stay off public pages until sourced. `c-note[data-missing]` shows only in `?review`.
