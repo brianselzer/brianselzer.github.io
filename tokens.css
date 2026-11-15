@@ -22,7 +22,7 @@
   --f-display:"Inter Tight",system-ui,sans-serif; --f-display-w:600; --f-display-ls:-.045em;
   --f-accent:"Instrument Serif",Georgia,serif; --f-accent-style:italic; --f-accent-ls:-.02em; --f-accent-scale:1.12;
   --f-label:"IBM Plex Mono",ui-monospace,monospace;
-  --maxw:1320px; --gut:clamp(20px,4.2vw,56px); --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:104px;
+  --maxw:1280px; --gut:clamp(20px,4.2vw,56px); --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:104px;
 }
 /* Type systems under test: html[data-type="A|B|C"] (A = default) */
 html[data-type="B"]{--f-display:"Space Grotesk",system-ui,sans-serif;--f-display-w:500;--f-display-ls:-.04em;--f-accent:"Space Grotesk",sans-serif;--f-accent-style:normal;--f-accent-ls:-.04em;--f-accent-scale:1}
