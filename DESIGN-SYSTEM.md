@@ -1,4 +1,4 @@
-# BrianSelzer.com Design System v0.3 (WEB-001) | Status: PROPOSED, local branch only
+# BrianSelzer.com Design System v0.4 (WEB-001) | Status: PROPOSED, local branch only
 Approved by Marshall (pending Brian): type system A provisional, 1280px container, 12/8/4 grid, local refactor. Not deployed, not merged to main.
 Files: `tokens.css` (fonts, color, type, spacing, type systems A/B/C) and `home.css` (base + components). Review mode: add `?review` to any URL to reveal asset-requirement notes (never visible by default).
 
@@ -9,7 +9,7 @@ Work | Advisory | Playable Systems | Signals | Lab | Let's Talk. Logo = Home. Le
 | ID | Class | Variants | Notes |
 |---|---|---|---|
 | C1 Editorial hero | `c-hero--portrait`, `c-hero--type` | + `image-full` (planned for Work case pages) | Mobile: headline, CTAs, then square-cropped image |
-| C2 Featured case | `c-cases` > `c-case` | `--wide`, `--tall`, `--banner`, `--feature` (hero case) | See section 3 |
+| C2 Featured case | `c-cases` > `c-case` | `--hero` (overlay headline + summary row, Work), `--compact` (secondary projects, Work), `--feature` (facts layout), `--wide`, `--tall`, `--banner` (Home) | See sections 3 and 10 |
 | C3 Split narrative | `c-split` + `c-rows`, `c-about` | sticky-title rows, image-left | Title above content on mobile |
 | C4 Content grid | `c-lanes`, `c-lab` + `c-lab__item` + `c-status`, `c-proof` | three-up; index-list and case-grid planned | Never a swipe-only strip on mobile |
 | C5 Framework | `c-framework` + `__item` + `__num` | numbered-columns; plane-diagram planned | Stacks to rows on mobile |
@@ -23,7 +23,7 @@ A page may only use documented components and variants. A new variant is added b
 Every case declares its own crops with custom properties: `--ar-d` and `--ar-m` (aspect ratio, desktop and mobile) and `--pos-d` and `--pos-m` (focus point). Defaults: wide 4:3 / 4:3, tall 4:5 / 4:3, banner 21:9 / 4:3, feature 16:9 / 4:5. Cinematic images use 16:9 desktop and 4:5 or 1:1 mobile with a re-cropped file via `<picture><source media="(max-width:767px)" srcset="x-m.jpg">`. Portrait projects stay portrait on mobile. Infographics are never cropped: use `object-fit:contain` on a tinted panel. Focus must be on the subject, never a center crop by default. The Marvel feature component (component-featured-case.html, noindex) is the reference implementation.
 
 ## 4. Tokens
-Container 1280 (applied), gutter clamp(20px,4.2vw,56px), grid 12 col (breakpoint scheme 8/4 col: single-column collapse is at 980 today; the 768 and 1024 steps are scheduled for the propagation pass). Spacing 8/16/24/40/64/104. Color: ink #080B12, ink-2 #0E1420, bone #F2F0E9, signal #00C9DE (signal-ink #006F7D for text on light), energy #FF674D, play #C5F000. Banned as text on light: signal (1.8:1) and tertiary grey (2.3:1). Type A: Inter Tight (headlines and body) + Instrument Serif italic accent + IBM Plex Mono labels; B and C stay switchable via `data-type`. Serif accent rule: at most one accent word per section and no more than two per page. Motion: parallax only on fine pointers, off under reduced motion. Performance budget: fonts under 120 KB, hero image under 130 KB, LCP under 2.5 s, CLS under 0.1.
+Container 1280, gutter clamp(20px,4.2vw,56px). Breakpoints (applied): mobile under 768 (4-col, single column), tablet 768 to 1023 (8-col; three-up grids stay three-up, hero and cases stack), desktop 1024+ (12-col). The mobile menu applies below 1024. Spacing 8/16/24/40/64/104. Color: ink #080B12, ink-2 #0E1420, bone #F2F0E9, signal #00C9DE (signal-ink #006F7D for text on light), energy #FF674D, play #C5F000. Banned as text on light: signal (1.8:1) and tertiary grey (2.3:1). Type A: Inter Tight (headlines and body) + Instrument Serif italic accent + IBM Plex Mono labels; B and C stay switchable via `data-type`. Serif accent rule: at most one accent word per section and no more than two per page. Motion: parallax only on fine pointers, off under reduced motion. Performance budget: fonts under 120 KB, hero image under 130 KB, LCP under 2.5 s, CLS under 0.1.
 
 ## 5. Content and conversion layer
 **Every page answers:** who it is for, what value Brian brings, what evidence supports it, what to do next.
@@ -44,3 +44,15 @@ Experience spanning (never "Trusted by"). Marvel: led licensed mobile operations
 
 ## 9. Retain / refactor / remove (status)
 Done: tokens extracted, V3 card and unused rules removed, components renamed, parallax bug fixed (script now keys off `data-parallax`). Pixel regression: identical at 320, 390, 768, 1024, 1440, 1920 on Home and Advisory before the intentional 1280 change. Remaining: inline styles to variants, 768 and 1024 breakpoint scheme, shared plane SVG include, legacy styles.css once other pages migrate.
+
+## 10. Work page rules (v0.4)
+**Page rhythm:** dark page header, one `--hero` case, a pair of `--compact` cases (second offset down), a dark "what this work qualifies me to lead" split that routes to Advisory, a conversion section. One hero case per page; every other project uses `--compact`.
+**Case hierarchy:** project identity (label), compelling headline, concise scope, explicit role, evidence, "qualifies me to lead", case route. Headlines state significance, never only a job title ("Building a mobile business around iconic IP", not "Running Marvel's licensed mobile business"). Qualification lines describe the kind of engagement the work qualifies Brian to lead, without claims.
+**Case story (disclosure, "Read the case"):** Context, Challenge, My role, What was built, Evidence, Relevance today. Evidence row is hidden publicly until a verified source is supplied (`data-missing`), and flagged in review mode. The disclosure is a native `details` element: keyboard operable, no dead link.
+**Mobile:** hero case media is 4:3 with the headline overlaid, so identity and reason to explore are visible in the first screen of the case; compact media 3:2. Art-direct real images with `--ar-m`, `--pos-m` and a `picture` source.
+**Held:** Halo x 7-Eleven (role, metrics and asset unverified). Apple wording on Ogmento held until Brian confirms.
+
+## 11. QA findings (this pass)
+Verified: no horizontal overflow on Home, Advisory, Work and the component preview at 320, 360, 390, 480, 600, 720 (200% zoom of 1440), 768, 820, 900, 1000, 1023, 1024, 1100, 1200, 1440, 1920. Keyboard: every focusable element on Home, Advisory and Work has a visible focus ring at 1440 and 390; Enter opens the case disclosure and the mobile menu (aria-expanded updates). Reduced motion: hero parallax does not run. Home and Advisory were pixel-identical across the refactor before the intentional 1280 container change.
+Open: Lighthouse, real-image crop checks (no approved images yet), 400% zoom text wrapping review by eye, contact delivery, live HTTPS, review-mode note overlaps overlay text on the smallest phones (review-only).
+Legacy claims: work.html was replaced with the new Work page. No page now says Apple acquired Ogmento, "sustainable" or "25+ AAA". The old Halo case is not published until verified. The legacy styles.css remains for contact, assessment, playablesystems and insights until they migrate.
