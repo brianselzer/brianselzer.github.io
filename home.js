@@ -1,4 +1,5 @@
 (function(){
+ if(/[?&]review/.test(location.search))document.documentElement.classList.add('review');
  var t=document.querySelector('.nav__toggle'),m=document.getElementById('menu');
  t.addEventListener('click',function(){var o=m.classList.toggle('is-open');t.setAttribute('aria-expanded',o)});
  m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.classList.remove('is-open');t.setAttribute('aria-expanded',false)}});
