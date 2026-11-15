@@ -3,7 +3,7 @@
 Branch v4-production, V1 staging build. Not pushed, merged or deployed.
 
 ## Git
-- Branch v4-production, 8 commits ahead of main (abe0bfe), 0 behind. One of the eight (4fedf7f) is the V3 homepage that v4 branched from. The earlier "10" in the last report was a miscount.
+- Branch v4-production, 8 commits ahead of main (abe0bfe) before this gate, plus 2 gate commits = 10 at HEAD, 0 behind. One of them (4fedf7f) is the V3 homepage that v4 branched from. The earlier "10" in my last report was wrong at the time (it was 8); 10 is correct now.
 - Legacy tag legacy-main-2026-11-14 points at abe0bfe. The tag is local only. abe0bfe is also on origin/main, so the old site stays recoverable from GitHub.
 - Portable backup: legacy-main-abe0bfe-complete-2026-11-14.zip (26 files, all HTML, CSS, JS, logos and photos) and brianselzer-all-refs-2026-11-14.bundle (every branch and tag).
 
