@@ -98,6 +98,7 @@ footer a{color:var(--txt-light);border-bottom:1px solid #3A4A58;margin-right:10p
   .nav__links.is-open{display:flex}
   .nav__links a{padding:16px 0;border-bottom:1px solid var(--ink-line)}
 }
+@media (max-width:767px){.c-hero__role{margin-bottom:20px}.c-hero__grid{gap:20px}}
 @media (max-width:420px){.c-sec{padding:72px 0}.c-hero--portrait h1{font-size:clamp(46px,14.4vw,60px)}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.c-plane,.btn{transition:none}}
 
