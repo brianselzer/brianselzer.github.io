@@ -330,3 +330,8 @@ html.review .c-cases--pair[data-held]{display:grid}
 .c-held-label{margin-top:32px;color:#B83A22;font:600 11px var(--f-label);letter-spacing:.12em;text-transform:uppercase}
 @media(max-width:1023px){.c-areas{grid-template-columns:repeat(2,minmax(0,1fr))}.c-areas li:nth-child(odd){padding-left:0;border-left:0}.c-areas li:nth-child(n+3){border-top:1px solid var(--bone-line);margin-top:18px;padding-top:22px}}
 @media(max-width:767px){.c-areas{grid-template-columns:1fr}.c-areas li,.c-areas li+li,.c-areas li:nth-child(n+3){padding:18px 0;margin:0;border-left:0;border-top:1px solid var(--bone-line)}.c-areas li:first-child{border-top:0}}
+
+/* hero tagline: tracked caps with a bone rule, after the approved banner */
+.c-hero__tag{display:flex;align-items:center;gap:16px;margin:20px 0 4px;font:400 12px/1.4 var(--f-label);letter-spacing:.3em;text-transform:uppercase;color:var(--txt-light)}
+.c-hero__tag::before{content:"";flex:none;width:1px;height:28px;background:var(--bone);opacity:.85}
+@media(max-width:420px){.c-hero__tag{font-size:10.5px;letter-spacing:.2em;gap:12px;margin-top:16px}.c-hero__tag::before{height:24px}}
