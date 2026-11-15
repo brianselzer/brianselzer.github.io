@@ -1,0 +1,31 @@
+/* Design tokens + font faces. Provisional until Brian approves type/color. Spec: DESIGN-SYSTEM.md */
+@font-face{font-family:"Inter Tight";font-weight:400;font-display:swap;src:url(fonts/inter-tight-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter Tight";font-weight:500;font-display:swap;src:url(fonts/inter-tight-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter Tight";font-weight:600;font-display:swap;src:url(fonts/inter-tight-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter Tight";font-weight:700;font-display:swap;src:url(fonts/inter-tight-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Instrument Serif";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/instrument-serif-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Instrument Serif";font-weight:400;font-style:italic;font-display:swap;src:url(fonts/instrument-serif-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:"Space Grotesk";font-weight:500;font-display:swap;src:url(fonts/space-grotesk-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Space Grotesk";font-weight:700;font-display:swap;src:url(fonts/space-grotesk-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;font-display:swap;src:url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;font-display:swap;src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Big Shoulders Display";font-weight:800;font-display:swap;src:url(fonts/big-shoulders-display-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Fraunces";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/fraunces-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Fraunces";font-weight:400;font-style:italic;font-display:swap;src:url(fonts/fraunces-latin-400-italic.woff2) format("woff2")}
+:root{
+  --ink:#080B12; --ink-2:#0E1420; --ink-line:#1E2938;
+  --bone:#F2F0E9; --bone-line:#D6D3C8;
+  --signal:#00C9DE; --signal-ink:#006F7D; /* signal-ink is the accessible cyan on light surfaces */
+  --energy:#FF674D; --play:#C5F000;
+  --txt-dark:#080B12; --txt-mid:#46515A; --txt-light:#C9D2D8; --txt-dim:#93A2AD;
+  --f-body:"Inter Tight",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-display:"Inter Tight",system-ui,sans-serif; --f-display-w:600; --f-display-ls:-.045em;
+  --f-accent:"Instrument Serif",Georgia,serif; --f-accent-style:italic; --f-accent-ls:-.02em; --f-accent-scale:1.12;
+  --f-label:"IBM Plex Mono",ui-monospace,monospace;
+  --maxw:1320px; --gut:clamp(20px,4.2vw,56px); --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:104px;
+}
+/* Type systems under test: html[data-type="A|B|C"] (A = default) */
+html[data-type="B"]{--f-display:"Space Grotesk",system-ui,sans-serif;--f-display-w:500;--f-display-ls:-.04em;--f-accent:"Space Grotesk",sans-serif;--f-accent-style:normal;--f-accent-ls:-.04em;--f-accent-scale:1}
+html[data-type="C"]{--f-display:"Fraunces",Georgia,serif;--f-display-w:400;--f-display-ls:-.03em;--f-accent:"Fraunces",Georgia,serif;--f-accent-style:italic;--f-accent-ls:-.03em;--f-accent-scale:1}
+html[data-type="B"]{--f-display:"Big Shoulders Display",Impact,sans-serif;--f-display-w:800;--f-display-ls:.004em;--tt:uppercase;--f-sub:"Space Grotesk",sans-serif;--f-accent:"Space Grotesk",sans-serif;--f-accent-style:normal;--f-accent-ls:-.03em;--f-accent-scale:.84}
+html[data-type="C"]{--f-display:"Fraunces",Georgia,serif;--f-display-w:400;--f-display-ls:-.028em;--f-sub:"Fraunces",Georgia,serif;--f-label:"Inter Tight",system-ui,sans-serif;--f-accent-scale:1}
