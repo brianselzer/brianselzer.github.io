@@ -335,3 +335,15 @@ html.review .c-cases--pair[data-held]{display:grid}
 .c-hero__tag{display:flex;align-items:center;gap:16px;margin:20px 0 4px;font:400 12px/1.4 var(--f-label);letter-spacing:.3em;text-transform:uppercase;color:var(--txt-light)}
 .c-hero__tag::before{content:"";flex:none;width:1px;height:28px;background:var(--bone);opacity:.85}
 @media(max-width:420px){.c-hero__tag{font-size:10.5px;letter-spacing:.2em;gap:12px;margin-top:16px}.c-hero__tag::before{height:24px}}
+
+/* soft-entry doors (advisory) */
+.surf-bone{background:var(--bone);color:var(--ink)}
+.c-doors{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.c-door{display:flex;flex-direction:column;gap:12px;padding:24px;border:1px solid var(--bone-line);background:#fff;color:var(--ink);transition:border-color .2s,transform .2s}
+.c-door:hover{border-color:var(--signal-ink);transform:translateY(-2px)}
+.c-door .label{color:var(--signal-ink)}
+.c-door h3{font:600 22px/1.15 var(--f-display);letter-spacing:-.02em}
+.c-door p{font-size:15px;line-height:1.5;color:var(--txt-mid);flex:1}
+.c-door__go{font:500 12px var(--f-label);letter-spacing:.12em;text-transform:uppercase;color:var(--signal-ink)}
+@media(max-width:1024px){.c-doors{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.c-doors{grid-template-columns:1fr}}
