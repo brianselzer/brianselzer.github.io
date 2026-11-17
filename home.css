@@ -417,3 +417,8 @@ html.review .c-cases--pair[data-held]{display:grid}
 .c-planes img{width:min(46%,600px);right:2%;opacity:.38}
 @media(max-width:1023px){.c-planes img{top:48%;right:-14%;width:84%;opacity:.3}}
 .c-planes{display:none}
+
+/* hero v5 opening paragraph */
+.c-hero__lead{font:600 clamp(22px,2.3vw,30px)/1.25 var(--f-display);letter-spacing:-.02em;color:var(--bone);max-width:21em;margin:28px 0 0;text-wrap:balance}
+.c-hero__sub{margin:14px 0 28px;max-width:34em;font-size:clamp(16px,1.35vw,18px);line-height:1.6}
+@media(min-width:1024px){.c-hero--portrait h1{font-size:clamp(56px,5.6vw,84px)}.c-hero--portrait{padding-top:104px}.c-hero__lead{margin-top:22px}}
