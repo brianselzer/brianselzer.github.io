@@ -406,3 +406,14 @@ html.review .c-cases--pair[data-held]{display:grid}
 @media(max-width:420px){.c-hero--portrait h1{font-size:clamp(36px,10.6vw,46px)}}
 .btn--ghost{background:transparent;color:var(--bone);box-shadow:inset 0 0 0 1px rgba(242,240,233,.4)}
 .btn--ghost:hover{box-shadow:inset 0 0 0 1px var(--signal);color:var(--signal)}
+
+/* hero v4: banner direction */
+.c-planes img{position:absolute;top:50%;right:-4%;width:min(62%,780px);height:auto;transform:translateY(-50%);opacity:.5}
+.c-hero--portrait h1{font-size:clamp(46px,7.4vw,112px);line-height:.92}
+.c-hero--portrait h1 .acc{display:block}
+.c-hero__tag{font:500 clamp(12px,1.15vw,15px) var(--f-label);letter-spacing:.32em;text-transform:uppercase;color:var(--txt-light);margin:22px 0 0}
+@media(max-width:1023px){.c-planes img{top:46%;right:-30%;width:120%}}
+@media(max-width:420px){.c-hero--portrait h1{font-size:clamp(44px,13vw,58px)}.c-hero__tag{letter-spacing:.2em}}
+.c-planes img{width:min(46%,600px);right:2%;opacity:.38}
+@media(max-width:1023px){.c-planes img{top:48%;right:-14%;width:84%;opacity:.3}}
+.c-planes{display:none}
